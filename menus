@@ -1,0 +1,89 @@
+MenuStyle * 	"mwm", Foreground "black", Background "#C0C0C0", Greyed "#808080", Font "$[F]", "AnimationOff"'
+
+DestroyMenu Main
+AddToMenu Main
++ Shell%$[I]xterm.xpm%			Exec exec xterm -name `uname` -ls
++ Internet%$[I]globe.xpm%		Popup Internet
++ Tools%$[I]tools.xpm%			Popup Tools
++ Multimedia%$[I]mmedia.xpm%		Popup Multimedia
++ Office%$[I]quill.xpm%			Popup Office
++ Games%$[I]die.xpm%			Popup Games
++ ""				  	Nop
++ Session%$[I]desktop.xpm%		Popup Session
+
+DestroyMenu Internet
+AddToMenu Internet
++ Firefox%$[I]firefox.xpm%		Exec exec firefox
++ "Other browsers"%$[I]globe.xpm%	Popup Browsers
++ ""					Nop
++ "Email%$[I]thunderbird.xpm%"	Exec exec thunderbird
++  ""					Nop
++ Pidgin%$[I]pidgin.png%		Exec exec pidgin
+
+DestroyMenu Tools
+AddToMenu Tools
++ Calculator%$[I]calc.xpm%		Exec exec gnome-calculator
+
+DestroyMenu Multimedia
+AddToMenu Multimedia
++ XFig%$[I]xfig.xpm%			Exec exec xfig
++ Inkscape%$[I]inkscape.xpm%		Exec exec inkscape
++ Gimp%$[I]gimp.xpm%			Exec exec gimp
++ ""					  Nop
++ "Play mp3"%$[I]sound.xpm%		Exec exec clementine
++ Mixer%$[I]mix.xpm%			Exec exec alsamixergui
+
+DestroyMenu Office
+AddToMenu Office
++ Lyx%$[I]lyx.xpm%			Exec exec lyx-qt
++ Gnumeric%$[I]spreadsheet.xpm%		Exec exec gnumeric
+
+DestroyMenu Session
+AddToMenu Session
++ "Lock screen%$[I]lock.xpm%"		Exec exec xscreensaver-command -lock
++ Setup%$[I]yinyang.xpm%		Popup Setup
++ Exit%$[I]cl.xpm%			Popup Exit
+
+DestroyMenu Setup
+AddToMenu Setup
++ Screensaver%$[I]yinyang.xpm%		Exec exec xscreensaver-demo
++ ""					  Nop
++ Console%$[I]xterm.xpm%		FvwmConsole
++ Restart%$[I]turn.xpm%			Restart
+
+DestroyMenu Exit
+AddToMenu Exit
++ "Close all programs and log out%$[I]warning.xpm%"	Quit
+
+DestroyMenu Window
+AddToMenu Window
++ Move%$[I]mv.xpm%		Move
++ Maximize%$[I]mx.xpm%		Maximize 0 100
++ Resize%$[I]rs.xpm%		Resize
++ (De)iconify%$[I]ic.xpm%	Iconify
++ ""				  Nop
++ Raise%$[I]ra.xpm%		Raise
++ Lower%$[I]lo.xpm%		Lower
++ (Un)stick%$[I]st.xpm%		Stick
++ ""				  Nop
++ Close%$[I]cl.xpm%		Close
++ Destroy%$[I]de.xpm%		Destroy
+
+DestroyMenu Browsers
+AddToMenu Browsers
++ Konqueror%$[I]konqueror.png%		Exec exec konqueror
++ "Chromium"%$[I]chrome.png%		Exec exec chromium-browser
+
+DestroyMenu Games
+AddToMenu Games
++ Patience%$[I]cards.xpm%		Exec exec /usr/games/xpat2
++ Mahjongg%$[I]mahjongg.xpm%		Exec exec /usr/games/xmahjongg
++ Backgammon%$[I]backgammon.xpm%	Exec exec xterm -name "Gnubg" -e gnubg
++ Titan%$[I]titan.xpm%			Exec exec java -jar $HOME/bin/colossus/Colossus.jar
++ "Puerto Rico"%$[I]puertorico.png%	Exec exec javaws $HOME/bin/TropicEuro.jnlp
++ "San Juan"%$[I]sanjuan.png%		Exec exec java -jar $HOME/bin/JSanJuan_v11.jar
++ "Race for the Galaxy"%$[I]rftg.png%	Exec exec rftg
++ Settlers%$[I]catan.png%		Exec exec java -jar $HOME/bin/catan/Catan.jar
++ Carcassonne%$[I]carcassonne.png%	Exec exec java -jar $HOME/bin/carcassonne/JCloisterZone.jar
++ ""					Nop
++ XBomb%$[I]bomb.xpm%			Exec exec xbomb -3 -triangle

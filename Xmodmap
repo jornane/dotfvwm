@@ -1,0 +1,16 @@
+clear Shift
+clear Control
+clear Lock
+clear mod1
+clear mod2
+clear mod3
+clear mod4
+clear mod5
+add Shift = Shift_L Shift_R
+add Control = Control_L Control_R
+add Lock = Caps_Lock
+add mod1 = Alt_L Alt_R
+add mod2 = Num_Lock
+add mod3 = Mode_switch
+add mod4 = Meta_L Meta_R
+add mod5 = Scroll_Lock

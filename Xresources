@@ -1,0 +1,29 @@
+*charClass: 			33:33,37:37,38:38,45:45,46:46,47:47
+*customization:			-color
+XTerm*customization:		-nocolor
+XTerm.VT100.background:		bisque
+XTerm.VT100.visualBell:		true
+XTerm.VT100.colorMode:  	true
+XTerm.VT100.colorRVMode:	false
+XTerm.VT100.highlightColor:	XtDefaultForeground
+XTerm.VT100.scrollbar.width:	5
+XTerm.VT100.thickness:		5
+XTerm.VT100.saveLines:		5000
+XTerm.VT100.translations: #override\n\
+        Shift<Btn4Down>,<Btn4Up>:scroll-back(1,line)\n\
+        Shift<Btn5Down>,<Btn5Up>:scroll-forw(1,line)\n\
+        Ctrl<Btn4Down>,<Btn4Up>:scroll-back(1,page)\n\
+        Ctrl<Btn5Down>,<Btn5Up>:scroll-forw(1,page)\n\
+        <Btn4Down>,<Btn4Up>:scroll-back(1,line)\n\
+        <Btn5Down>,<Btn5Up>:scroll-forw(1,line)\n
+XTerm.VT100.Scrollbar.translations: #override\n\
+        <Btn5Down>: StartScroll(Forward)\n\
+        <Btn4Down>: StartScroll(Backward)\n
+XTerm.VT100.showMissingGlyphs:		true
+XTerm.VT100.scrollBar:			true
+XTerm.VT100.scrollbar.Background:	bisque
+
+Fig*Inches:		false
+Fig*Papersize:		A4
+Fig*splash:		false
+

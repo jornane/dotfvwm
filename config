@@ -1,0 +1,167 @@
+#---------- Global settings ----------
+
+ImagePath $[FVWM_USERDIR]/icons/
+setenv I 16x16/
+setenv F "xft:Gill Sans MT Light:Light:Roman:size=13:encoding=iso10646-1"
+#setenv I \"32x32/\"
+#setenv F "xft:Gill Sans MT:Normal:Roman:size=19:encoding=iso10646-1"
+
+CleanupColorsets
+Colorset 0 fg #000000, bg #c0c0c0, hi #e0e0e0, sh #808080
+Colorset 1 fg #000000, bg #709cf8, hi #b8cefc, sh #516691
+Colorset 2 fg #404040, bg black
+Colorset 3 fg #000000, bg wheat
+
+DefaultFont "xft:Gill Sans MT Light:Light:Roman:size=11:encoding=iso10646-1"
+
+#---------- Virtual screen ----------
+
+DeskTopSize			3x2
+EdgeScroll			100 100
+EdgeResistance			150
+Style * EdgeMoveDelay		150
+Style * EdgeMoveResistance	50
+
+*FvwmPager: Rows		2
+*FvwmPager: Columns		1
+*FvwmPager: DeskTopScale	32
+*FvwmPager: Geometry		-0+25
+*FvwmPager: Colorset *		2
+*FvwmPager: Font		none
+
+*FvwmPager: WindowColorsets	0 1
+*FvwmPager: Hilight #384E7C
+*FvwmPager: Window3DBorders
+*FvwmPager: MiniIcons
+*FvwmPager: SloppyFocus
+*FvwmPager: UseSkipList
+
+*FvwmPager: Balloons
+*FvwmPager: BalloonColorset *	0
+*FvwmPager: BalloonColorset *	3
+*FvwmPager: BalloonFont "xft:Gill Sans MT Light:Light:Roman:size=11:encoding=iso10646-1"
+
+#---------- Windows ----------
+
+Style * 	SloppyFocus
+ColormapFocus	FollowsFocus
+
+OpaqueMoveSize	100
+Style *		SnapAttraction 7 All Screen
+
+Style *		TileCascadePlacement
+Style *		ScatterWindowGroups
+Style *		NoPPosition
+Style *		NoTransientPPosition
+
+Style *		MwmButtons
+ButtonStyle 1	MiniIcon
+ButtonStyle 2	4 50x30@0 75x70@0 25x70@0 50x30@1 #up triangle
+ButtonStyle 4	4 50x70@0 25x30@1 75x30@1 50x70@0 #down triangle
+
+Style *		Font "xft:Gill Sans MT:Bold:Roman:size=11:encoding=iso10646-1"
+
+Style *		Colorset 0
+Style *		HilightColorset 1
+Style *		MwmBorder     
+Style * 	BorderWidth 0
+Style *		HandleWidth 3
+Style *		HintOverride
+Style *		DecorateTransient
+Style Info	NakedTransient
+
+Style "xconsole"	WindowListSkip
+Style "xbiff"		NoTitle,NoHandles,Sticky,WindowListSkip,BorderWidth 0,NeverFocus
+Style "xload"		NoTitle,NoHandles,Sticky,WindowListSkip,BorderWidth 0,NeverFocus
+Style "oclock"		NoTitle,NoHandles,Sticky,WindowListSkip,BorderWidth 0,NeverFocus
+Style "xclock"		NoTitle,NoHandles,Sticky,WindowListSkip,BorderWidth 0,NeverFocus
+Style "FvwmPager"	NoTitle,NoHandles,Sticky,WindowListSkip,BorderWidth 0
+Style "FvwmButtons"	NoTitle,NoHandles,Sticky,WindowListSkip,BorderWidth 0
+Style "OpenSSH"		NoTitle,NoHandles,Sticky,WindowlistSkip,BorderWidth 10,StaysOnTop,UsePPosition
+Style "xpostit+"	NoTitle,Sticky,NoHandles,WindowListSkip,BorderWidth 0
+Style "XPostitPlus"	NoButton 2,NoButton 4
+Style "Knotes"		NoTitle,NoHandles,Sticky,WindowListSkip,BorderWidth 0,NeverFocus
+Style "stalonetray"	NoTitle,NoHandles,Sticky,WindowListSkip,BorderWidth 0,NeverFocus
+
+#---------- Menus ----------
+
+Read menus
+
+#---------- Functions ----------
+
+Read functions
+
+#---------- Mouse bindings ----------
+# Buttons:	0=any, 1=left, 2=middle, 3=right
+# Contexts:	Anywhere Root 
+#		Framecorners frameSides
+#		135 Titlebar 642
+#		Window Icon
+# Modifiers:	None Shift Control Meta Any
+
+# Button	Context Modif	Clickfunction	Doubleclickfunction
+
+Mouse 1		R	A	Menu Main
+Mouse 2		R	A	Menu Window
+Mouse 3		R	A	Winlist
+Mouse 1		1	A	Menu Window 	Close
+Mouse 1		2	A	Maximize 0 100
+Mouse 2		2	A	Maximize 100 100
+Mouse 3		2	A	Maximize 100 0
+Mouse 0		4	A	Iconify
+Mouse 1		T	A	Raise-and-move
+Mouse 1		T	C	Maximize 38 83
+Mouse 2		T	A	Move
+Mouse 1		FS	A	Raise-and-resize
+Mouse 2		FS	A	Move
+Mouse 3		TFSI	A	RaiseLower
+Mouse 1		I	A	Move
+Mouse 2		I	A	Iconify
+
+
+#---------- Key bindings ----------
+# Key		Context Modifi 	Function
+
+Key Left	A	C	Scroll    -100    0
+Key Right	A	C	Scroll     100    0
+Key Up		A	C	Scroll       0 -100
+Key Down	A	C	Scroll       0  100
+Key Left	A	CS	Scroll     -10    0
+Key Right	A	CS	Scroll      10    0
+Key Up		A	CS	Scroll       0  -10
+Key Down	A	CS	Scroll       0   10
+Key Left	A	CM	CursorMove  -1    0
+Key Right	A	CM	CursorMove   1    0
+Key Up		A	CM	CursorMove   0   -1
+Key Down	A	CM	CursorMove   0    1
+Key Left	A	CMS	CursorMove -10    0
+Key Right	A	CMS	CursorMove  10    0
+Key Up		A	CMS	CursorMove   0  -10
+Key Down	A	CMS	CursorMove   0   10
+
+Key Tab		A	M	Winlist
+Key Tab		A	MS	Winlist
+Key Escape	A	C	Winlist
+
+Key F1		A	M	Popup Main
+Key F2		A	M	Popup Window
+Key F3		A	M	Winlist
+Key F4		A	M	Close
+Key F5		A	M	Move
+Key F6		A	M	Resize
+Key F7		A	M	Raise
+Key F8		A	M	Lower
+Key F9		A	M	Iconify
+Key F10		A	M	Stick
+Key F11		A	M	Prev Focus
+Key F12		A	M	Next Focus
+Key Sys_Req	A	M	FvwmConsole
+Key Scroll_Lock	A	A	Exec xlock -nice 0 -mode blank -erasedelay 0
+Key Pause	A	A	Exec xlock -nice 0 -mode random -erasedelay 0
+
+
+#---------- Icons ----------
+
+Style * MiniIcon mini-defaulttool.xpm, Icon defaulttool.xpm
+Read icon-bindings
+## Style * NoIcon

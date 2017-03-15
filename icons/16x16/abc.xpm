@@ -1,0 +1,23 @@
+/* XPM */
+static char * mini_abc_xpm[] = {
+"16 16 4 1",
+" 	c None",
+".	c #000000000000",
+"X	c #00000000FFFF",
+"o	c #FFFFFFFFFFFF",
+"      .   .     ",
+"     ... ...    ",
+"    . ... ...   ",
+"      ..   .    ",
+"      ..  ...   ",
+"      ..   ..   ",
+"      ...  .    ",
+"    X. ....ooo o",
+"   XXX  ..oo  oo",
+"   XXX   oo    o",
+"  X  XX  oo     ",
+"  X  XX  oo     ",
+" X    XX oo     ",
+" XXXXXXX oo    o",
+"X      XX oo  o ",
+"X      XX  ooo  "};

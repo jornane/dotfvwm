@@ -1,0 +1,244 @@
+#	Hosts
+Style XTerm		MiniIcon 16x16/xterm.xpm,	Icon 32x32/xterm.xpm 
+Style Linux		MiniIcon 16x16/linux.xpm,	Icon 32x32/linux.xpm
+Style FreeBSD		MiniIcon 16x16/bsd.xpm,		Icon 32x32/bsd.xpm
+Style OpenBSD		MiniIcon 16x16/bsd.xpm,		Icon 32x32/bsd.xpm
+Style NetBSD		MiniIcon 16x16/bsd.xpm,		Icon 32x32/bsd.xpm
+Style VMS		MiniIcon 16x16/vms.xpm,		Icon 32x32/vms.xpm
+Style ULTRIX		MiniIcon 16x16/ultrix.xpm,	Icon 32x32/ultrix.xpm
+Style OSF1		MiniIcon 16x16/alpha.xpm,	Icon 32x32/alpha.xpm
+Style SunOS		MiniIcon 16x16/sun.xpm,		Icon 32x32/sun.xpm
+Style Solaris		MiniIcon 16x16/solaris.xpm,	Icon 32x32/solaris.xpm
+Style HP-UX		MiniIcon 16x16/hp.xpm,		Icon 32x32/hp.xpm
+Style IRIX		MiniIcon 16x16/sgi.xpm,		Icon 32x32/sgi.xpm
+Style NeXTStep		MiniIcon 16x16/next.xpm,	Icon 32x32/next.xpm
+Style AIX		MiniIcon 16x16/ibm.xpm,		Icon 32x32/ibm.xpm
+Style A/UX		MiniIcon 16x16/apple.xpm,	Icon 32x32/apple.xpm
+Style OS/MP		MiniIcon 16x16/solbourne.xpm,	Icon 32x32/solbourne.xpm
+Style Amiga		MiniIcon 16x16/amiga.xpm,	Icon 32x32/amiga.xpm
+
+#	Multimedia
+Style Xcdroast		MiniIcon 16x16/cdred.xpm,	Icon 32x32/cdred.xpm
+Style K3b		MiniIcon 16x16/k3b.xpm,		Icon 32x32/k3b.xpm
+Style Gaim		MiniIcon 16x16/gaim.xpm,	Icon 32x32/gaim-cool.xpm
+Style Gnomemeeting	MiniIcon 16x16/groups.xpm
+Style XPlaycd		MiniIcon 16x16/cd.xpm,		Icon 32x32/xplaycd.xpm
+Style Gcd		MiniIcon 16x16/cd.xpm,		Icon 32x32/xplaycd.xpm
+Style gtcd		MiniIcon 16x16/cd.xpm,		Icon 32x32/xplaycd.xpm
+Style Gnome-cd		MiniIcon 16x16/cd.xpm,		Icon 32x32/xplaycd.xpm
+Style Grip		MiniIcon 16x16/grip.xpm,	Icon 32x32/grip.xpm
+Style GQmpeg		MiniIcon 16x16/sound.xpm,	Icon 32x32/sound.xpm
+Style Gqmpeg		MiniIcon 16x16/sound.xpm,	Icon 32x32/sound.xpm
+Style Zinf		MiniIcon 16x16/sound.xpm,	Icon 32x32/sound.xpm
+Style xmms		MiniIcon 16x16/sound.xpm,	Icon 32x32/sound.xpm
+Style Gtkam		MiniIcon 16x16/photo.xpm,	Icon 32x32/photo.xpm
+Style XMixer		MiniIcon 16x16/mix.xpm,		Icon 32x32/xmixer.xpm
+Style Gmix		MiniIcon 16x16/mix.xpm,		Icon 32x32/xmixer.xpm
+Style kmix		MiniIcon 16x16/mix.xpm,		Icon 32x32/xmixer.xpm
+Style "ALSA Mixer"	MiniIcon 16x16/mix.xpm,		Icon 32x32/xmixer.xpm
+Style Gnome-volume-control MiniIcon 16x16/mix.xpm,	Icon 32x32/xmixer.xpm
+Style MPlayer		MiniIcon 16x16/mplayer.xpm,	Icon 32x32/mplayer.xpm
+Style XAnim		MiniIcon 16x16/movie.xpm,	Icon 32x32/movie.xpm
+Style rvplayer		MiniIcon 16x16/movie.xpm,	Icon 32x32/movie.xpm
+Style Sdr*		MiniIcon 16x16/sdr.xpm,		Icon 32x32/sdr.xpm
+Style Vat		MiniIcon 16x16/sdr.xpm,		Icon 32x32/sdr.xpm
+Style Dialog		MiniIcon 16x16/sdr.xpm,		Icon 32x32/sdr.xpm
+Style Toplevel		MiniIcon 16x16/sdr.xpm,		Icon 32x32/sdr.xpm
+Style *Radio*		MiniIcon 16x16/radio.xpm,	Icon 32x32/radio.xpm
+Style Vic		MiniIcon 16x16/tv.xpm,		Icon 32x32/tv.xpm
+Style *MpegTV*		MiniIcon 16x16/movie.xpm,	Icon 32x32/movie.xpm
+Style mpegTVControls	MiniIcon 16x16/movie.xpm,	Icon 32x32/movie.xpm
+Style RCACoreAppShell	MiniIcon 16x16/real.xpm,	Icon 32x32/real.xpm
+Style Gabber		MiniIcon 16x16/gabber.xpm,	Icon 32x32/gabber.xpm
+Style Gmp4player	MiniIcon 16x16/movie.xpm,	Icon 32x32/movie.xpm
+Style SDL_App		MiniIcon 16x16/movie.xpm,	Icon 32x32/movie.xpm
+Style xine		MiniIcon 16x16/xine.xpm,	Icon 32x32/xine.xpm
+Style licq-bin		MiniIcon 16x16/icq.xpm,		Icon 32x32/icq.xpm
+Style Xchat		MiniIcon 16x16/xchat.xpm,	Icon 32x32/xchat.xpm
+Style X-Chat		MiniIcon 16x16/xchat.xpm,	Icon 32x32/xchat.xpm
+
+#	Browsers
+Style Mosaic		MiniIcon 16x16/mosaic.xpm,	Icon 32x32/mosaic.xpm
+Style Netscape*		MiniIcon 16x16/nscape4.xpm,	Icon 32x32/nscape4.xpm
+Style "*Netscape 6*"	MiniIcon 16x16/nscape.xpm,	Icon 32x32/nscape.xpm
+Style Mozilla		MiniIcon 16x16/mozilla.xpm,	Icon 32x32/mozilla.xpm
+Style Mozilla-bin	MiniIcon 16x16/mozilla.xpm,	Icon 32x32/mozilla.xpm
+Style Seamonkey-bin	MiniIcon 16x16/seamonkey.xpm,	Icon 32x32/seamonkey.xpm
+Style "*Mozilla Firebird" MiniIcon 16x16/firebird.xpm,	Icon 32x32/firebird.xpm
+Style Firefox-bin	MiniIcon 16x16/firefox.xpm,	Icon 32x32/firefox.xpm
+Style "*Mozilla Firefox" MiniIcon 16x16/firefox.xpm,	Icon 32x32/firefox.xpm
+Style TopLevelShell	MiniIcon 16x16/coffeemill.xpm,	Icon 32x32/coffeemill.xpm
+Style Opera		MiniIcon 16x16/opera.xpm, 	Icon 32x32/opera.xpm
+Style Amaya		MiniIcon 16x16/tamaya.xpm,	Icon 32x32/tamaya.xpm
+Style Dialogue		MiniIcon 16x16/tamaya.xpm,	Icon 32x32/tamaya.xpm
+Style chimera		MiniIcon 16x16/chimera.xpm,	Icon 32x32/chimera.xpm
+Style Acroread		MiniIcon 16x16/acroread.xpm,	Icon 32x32/acroread.xpm
+Style AcroRead		MiniIcon 16x16/acroread.xpm,	Icon 32x32/acroread.xpm
+Style Xpdf		MiniIcon 16x16/acroread.xpm,	Icon 32x32/acroread.xpm
+Style GV		MiniIcon 16x16/gv.xpm,		Icon 32x32/gv.xpm
+Style ghostscript	MiniIcon 16x16/gv.xpm,		Icon 32x32/gv.xpm
+Style Ggv		MiniIcon 16x16/gv.xpm,		Icon 32x32/gv.xpm
+Style Iexplorer		MiniIcon 16x16/ie.xpm,		Icon 32x32/ie.xpm
+Style konqueror		MiniIcon 16x16/konqueror.xpm,	Icon 32x32/konqueror.xpm
+Style galeon_browser	MiniIcon 16x16/galeon.xpm,	Icon 32x32/galeon.xpm
+
+#	Email
+Style Thunderbird-bin	MiniIcon 16x16/thunderbird.xpm,	Icon 32x32/thunderbird.xpm
+Style Mozilla-thunderbird-bin MiniIcon 16x16/thunderbird.xpm, Icon 32x32/thunderbird.xpm
+Style Evolution*	MiniIcon 16x16/evo.xpm,		Icon 32x32/evo.xpm
+Style Exmh*		MiniIcon 16x16/mh.xpm,		Icon 32x32/mh.xpm
+Style Html		MiniIcon 16x16/mh.xpm,		Icon 32x32/mh.xpm
+Style Fltop		MiniIcon 16x16/mh.xpm,		Icon 32x32/mh.xpm
+Style Pick		MiniIcon 16x16/mh.xpm,		Icon 32x32/mh.xpm
+Style Sedit		MiniIcon 16x16/mh.xpm,		Icon 32x32/mh.xpm
+Style Pine		MiniIcon 16x16/pine.xpm,	Icon 32x32/pine.xpm
+Style Alpine		MiniIcon 16x16/alpine.png,	Icon 32x32/alpine.png
+Style kmail		MiniIcon 16x16/kmail.xpm,	Icon 32x32/kmail.xpm
+
+#	Graphics
+Style Bitmap		MiniIcon 16x16/bitmap.xpm,	Icon 32x32/bitmap.xpm
+Style XVroot		MiniIcon 16x16/xv.xpm,		Icon 32x32/xv.xpm
+Style XVcontrols	MiniIcon 16x16/xv.xpm,		Icon 32x32/xv.xpm
+Style XVschnauze	MiniIcon 16x16/xv.xpm,		Icon 32x32/xv.xpm
+Style XVcedit		MiniIcon 16x16/xv.xpm,		Icon 32x32/xv.xpm
+Style XVinfo		MiniIcon 16x16/xv.xpm,		Icon 32x32/xv.xpm
+Style XVtextview	MiniIcon 16x16/xv.xpm,		Icon 32x32/xv.xpm
+Style XVconfirm		MiniIcon 16x16/xv.xpm,		Icon 32x32/xv.xpm
+Style XVdir		MiniIcon 16x16/xv.xpm,		Icon 32x32/xv.xpm
+Style XPaint		MiniIcon 16x16/paint.xpm
+Style Canvas		MiniIcon 16x16/paint.xpm
+Style Gimp		MiniIcon 16x16/gimp.xpm,	Icon 32x32/gimp.xpm
+Style Xsane		MiniIcon 16x16/sane.xpm,	Icon 32x32/sane.xpm
+Style kooka		MiniIcon 16x16/kooka.xpm,	Icon 32x32/kooka.xpm
+Style Gtkam-gimp	MiniIcon 16x16/photo.xpm,	Icon 32x32/photo.xpm
+Style Gconf-editor	MiniIcon 16x16/gnome.xpm,	Icon 32x32/gnome.xpm
+Style GnomeHelpBrowser	MiniIcon 16x16/gnome.xpm,	Icon 32x32/gnome.xpm
+Style Gnome-help-browser MiniIcon 16x16/gnome.xpm,	Icon 32x32/gnome.xpm
+Style "Image Viewer"	MiniIcon 16x16/eeye.xpm,	Icon 32x32/eeye.xpm
+Style Fig		MiniIcon 16x16/fig.xpm,		Icon 32x32/fig.xpm
+Style xloadimage	MiniIcon 16x16/eyes.xpm,	Icon 32x32/eyes.xpm
+Style GQview		MiniIcon 16x16/gqview.xpm,	Icon 32x32/gqview.xpm
+Style Chemtool		MiniIcon 16x16/atomix.xpm,	Icon 32x32/atomix.xpm
+Style Gthumb		MiniIcon 16x16/gthumb.xpm,	Icon 32x32/gthumb.xpm
+Style Qcad		MiniIcon 16x16/qcad.xpm,	Icon 32x32/qcad.xpm
+
+#	Office
+Style Mrproject		MiniIcon 16x16/mrproject.xpm,	Icon 32x32/mrproject.xpm
+Style XWp		MiniIcon 16x16/wp.xpm,		Icon 32x32/wp.xpm
+Style Maker		MiniIcon 16x16/frame.xpm,	Icon 32x32/frame.xpm
+Style Scribus		MiniIcon 16x16/scribus.png,	Icon 32x32/scribus.png
+Style lyx		MiniIcon 16x16/lyx.xpm,		Icon 32x32/lyx.xpm
+Style Lyx-qt		MiniIcon 16x16/lyx.xpm,		Icon 32x32/lyx.xpm
+Style XForm		MiniIcon 16x16/lyx.xpm,		Icon 32x32/lyx.xpm
+Style Ted		MiniIcon 16x16/ted.xpm,		Icon 32x32/ted.xpm
+Style Gnumeric		MiniIcon 16x16/spreadsheet.xpm,	Icon 32x32/spreadsheet.xpm
+Style "OpenOffice.org *" MiniIcon 16x16/openoffice.xpm,	Icon 32x32/openoffice.xpm
+Style VCLSalFrame	MiniIcon 16x16/openoffice.xpm,	Icon 32x32/openoffice.xpm
+Style AbiWord*		MiniIcon 16x16/abiword.xpm,	Icon 32x32/abiword.xpm
+Style korganizer	MiniIcon 16x16/korganizer.xpm,	Icon 32x32/korganizer.xpm
+Style kword		MiniIcon 16x16/kword.xpm,	Icon 32x32/kword.xpm
+Style kwrite		MiniIcon 16x16/kwrite.xpm,	Icon 32x32/kwrite.xpm
+Style kchart		MiniIcon 16x16/kchart.xpm,	Icon 32x32/kchart.xpm
+Style kspread		MiniIcon 16x16/kspread.xpm,	Icon 32x32/kspread.xpm
+Style kpresenter	MiniIcon 16x16/kpresenter.xpm,	Icon 32x32/kpresenter.xpm
+Style kontour		MiniIcon 16x16/kontour.xpm,	Icon 32x32/kontour.xpm
+Style Word		MiniIcon 16x16/winword.xpm,	Icon 32x32/winword.xpm
+
+#	Tools
+Style Emacs		MiniIcon 16x16/gnu.xpm,		Icon 32x32/gnu.xpm
+Style XCalc		MiniIcon 16x16/calc.xpm,	Icon 32x32/calc.xpm
+Style gnome-calculator	MiniIcon 16x16/calc.xpm,	Icon 32x32/calc.xpm
+Style kcalc		MiniIcon 16x16/calc.xpm,	Icon 32x32/calc.xpm
+Style XFontSel		MiniIcon 16x16/abc.xpm,		Icon 32x32/abc.xpm
+Style Gnome-character-map MiniIcon 16x16/charmap.xpm,	Icon 32x32/charmap.xpm
+Style Xfd		MiniIcon 16x16/abc.xpm,		Icon 32x32/abc.xpm
+Style Gnome-font-properties MiniIcon 16x16/abc.xpm,	Icon 32x32/abc.xpm
+Style Gnome-system-monitor MiniIcon 16x16/sysmon.xpm,	Icon 32x32/sysmon.xpm
+Style XKeyCaps		MiniIcon 16x16/keyb.xpm, 	Icon 32x32/keyb.xpm
+Style Gnome-keyboard-properties MiniIcon 16x16/keyb.xpm, Icon 32x32/keyb.xpm
+Style Gnome-keybinding-properties MiniIcon 16x16/keyb.xpm, Icon 32x32/keyb.xpm
+Style Gnome-mouse-properties MiniIcon 16x16/mouse.xpm, Icon 32x32/mouse.xpm
+Style Gnome-accessibility-keyboard-properties MiniIcon 16x16/access.xpm, Icon 32x32/access.xpm
+Style Gnome-accessibility-keybinding-properties MiniIcon 16x16/access.xpm, Icon 32x32/access.xpm
+Style Xmag		MiniIcon 16x16/zoom.xpm
+Style Xman		MiniIcon 16x16/man.xpm
+Style XClipboard	MiniIcon 16x16/clipboard.xpm
+Style XCutsel		MiniIcon 16x16/clipboard.xpm
+Style XPostitPlus	MiniIcon 16x16/postit.xpm,	Icon 32x32/postit.xpm
+Style kprinter		MiniIcon 16x16/printer.xpm,	Icon 32x32/printer.xpm
+Style Gnome-print-manager MiniIcon 16x16/printer.xpm,	Icon 32x32/printer.xpm
+Style Redhat-config-printer MiniIcon 16x16/printer.xpm,	Icon 32x32/printer.xpm
+Style JobMonitor	MiniIcon 16x16/printer.xpm,	Icon 32x32/printer.xpm
+Style Printtool		MiniIcon 16x16/printer.xpm,	Icon 32x32/printer.xpm
+Style ScreenShot	MiniIcon 16x16/camera.xpm,	Icon 32x32/camera.xpm
+Style gmc		MiniIcon 16x16/filemgr.xpm,	Icon 32x32/gmc.xpm
+Style Gmc		MiniIcon 16x16/filemgr.xpm,	Icon 32x32/gmc.xpm
+Style Krusader		MiniIcon 16x16/filemgr.xpm,	Icon 32x32/gmc.xpm
+Style Nautilus		MiniIcon 16x16/nautilus.xpm,	Icon 32x32/nautilus.xpm
+Style Eel		MiniIcon 16x16/nautilus.xpm,	Icon 32x32/nautilus.xpm
+Style qtella		MiniIcon 16x16/gnutella.xpm,	Icon 32x32/gnutella.xpm
+Style SPanel		MiniIcon 16x16/unicode.xpm,	Icon 32x32/unicode.xpm
+Style gFTP		MiniIcon 16x16/gftp.xpm,	Icon 32x32/gftp.xpm
+Style Xtraceroute	MiniIcon 16x16/earth.xpm,	Icon 32x32/earth.xpm
+Style Usbview		MiniIcon 16x16/usb.xpm,		Icon 32x32/usb.xpm
+Style Gnome-bluetooth-admin MiniIcon 16x16/bluetooth.xpm, Icon 32x32/bluetooth.xpm
+Style Gnome-about	MiniIcon 16x16/gnome.xpm,	Icon 32x32/gnome.xpm
+Style Gnome-help	MiniIcon 16x16/help.xpm,	Icon 32x32/help.xpm
+Style khelpcenter	MiniIcon 16x16/help.xpm,	Icon 32x32/help.xpm
+Style Gman		MiniIcon 16x16/help.xpm,	Icon 32x32/help.xpm
+Style drkonqi		MiniIcon 16x16/crash.xpm,	Icon 32x32/crash.xpm
+
+#	Games
+Style XBill		MiniIcon 16x16/bill.xpm,	Icon 32x32/bill.xpm
+Style XBomb		MiniIcon 16x16/bomb.xpm,	Icon 32x32/bomb.xpm
+Style Demineur		MiniIcon 16x16/mine.xpm,	Icon 32x32/mine.xpm
+Style Spider		MiniIcon 16x16/cards.xpm,	Icon 32x32/cards.xpm
+Style XPat		MiniIcon 16x16/cards.xpm,	Icon 32x32/cards.xpm
+Style kpat		MiniIcon 16x16/cards.xpm,	Icon 32x32/cards.xpm
+Style XBoard		MiniIcon 16x16/slon.xpm
+Style Gnubg		MiniIcon 16x16/backgammon.xpm,	Icon 32x32/backgammon.xpm
+Style kbackgammon	MiniIcon 16x16/backgammon.xpm,	Icon 32x32/backgammon.xpm
+Style xrobots		MiniIcon 16x16/robots.xpm,	Icon 32x32/robots.xpm
+Style Basicwin		MiniIcon 16x16/reversi.xpm,	Icon 32x32/reversi.xpm
+Style XMahjongg		MiniIcon 16x16/mahjongg.xpm,	Icon 32x32/mahjongg.xpm
+Style xmahjongg		MiniIcon 16x16/mahjongg.xpm,	Icon 32x32/mahjongg.xpm
+Style kmahjongg		MiniIcon 16x16/mahjongg.xpm,	Icon 32x32/mahjongg.xpm
+Style kshisen		MiniIcon 16x16/mahjongg.xpm,	Icon 32x32/mahjongg.xpm
+Style Xtetris		MiniIcon 16x16/tetris.xpm,	Icon 32x32/tetris.xpm
+Style xhextris		MiniIcon 16x16/hextris.xpm,	Icon 32x32/hextris.xpm
+Style XSok		MiniIcon 16x16/sokoban.xpm,	Icon 32x32/sokoban.xpm
+Style Same-gnome	MiniIcon 16x16/same.xpm,	Icon 32x32/same.xpm
+Style Gtans		MiniIcon 16x16/tans.xpm,	Icon 32x32/tans.xpm
+Style Civclient		MiniIcon 16x16/civ.xpm,		Icon 32x32/civ.xpm
+Style Gtali		MiniIcon 16x16/die.xpm,		Icon 32x32/die.xpm
+Style kjumpingcube	MiniIcon 16x16/die.xpm,		Icon 32x32/die.xpm
+Style Gataxx		MiniIcon 16x16/reversi.xpm,	Icon 32x32/reversi.xpm
+Style Glines		MiniIcon 16x16/lines.xpm,	Icon 32x32/lines.xpm
+Style Arena		MiniIcon 16x16/titan.xpm,	Icon 32x32/titan.xpm
+Style net-sf-colossus-server-Start MiniIcon 16x16/titan.xpm, Icon 32x32/titan.xpm
+Style net.sf.colossus.server.Start MiniIcon 16x16/titan.xpm, Icon 32x32/titan.xpm
+Style jSanJuan-JSanJuan	MiniIcon 16x16/sanjuan.png,	Icon 32x32/sanjuan.png
+Style Catan-Main	MiniIcon 16x16/catan.png,	Icon 32x32/catan.png
+Style kbattleship	MiniIcon 16x16/battleship.xpm,	Icon 32x32/battleship.xpm
+Style Frozen-Bubble	MiniIcon 16x16/bubble.xpm,	Icon 32x32/bubble.xpm
+Style jSanJuan-JSanJuan	MiniIcon 16x16/sanjuan.png,	Icon 32x32/sanjuan.png
+Style Rftg		MiniIcon 16x16/rftg.png,	Icon 32x32/rftg.png
+
+#	Emulators
+Style xspect		MiniIcon 16x16/spectrum.xpm,	Icon 32x32/spectrum.xpm
+Style Spectemu*		MiniIcon 16x16/spectrum.xpm,	Icon 32x32/spectrum.xpm
+Style Xzx		MiniIcon 16x16/spectrum.xpm,	Icon 32x32/spectrum.xpm
+Style "fMSX *"		MiniIcon 16x16/msx.xpm,		Icon 32x32/msx.xpm
+Style Frodo*		MiniIcon 16x16/cbm.xpm,		Icon 32x32/cbm.xpm
+
+#	Various
+Style Fvwm*		MiniIcon 16x16/yinyang.xpm,	Icon 32x32/yinyang.xpm
+Style FvwmPager		MiniIcon 16x16/pager.xpm
+Style "SSH Authentication Passphrase Request" MiniIcon 16x16/key.xpm
+Style Open*file*	MiniIcon 16x16/diskette.xpm
+Style Load		MiniIcon 16x16/diskette.xpm
+Style "Save as *"	MiniIcon 16x16/diskette.xpm
+Style Gnorpm		MiniIcon 16x16/rpm.xpm
+Style Switchdesk*	MiniIcon 16x16/gnome.xpm,	Icon 32x32/gnome.xpm
+Style sun.plugin.navig.motif.Plugin MiniIcon 16x16/java.xpm, Icon 32x32/java.xpm
+
