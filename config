@@ -2,17 +2,15 @@
 
 ImagePath $[FVWM_USERDIR]/icons/
 setenv I 16x16/
-setenv F "xft:Gill Sans MT Light:Light:Roman:size=13:encoding=iso10646-1"
-#setenv I \"32x32/\"
-#setenv F "xft:Gill Sans MT:Normal:Roman:size=19:encoding=iso10646-1"
+setenv F "xft:Helvetica:Gill Sans MT Light:Light:Roman:size=11:encoding=iso10646-1"
 
 CleanupColorsets
-Colorset 0 fg #000000, bg #c0c0c0, hi #e0e0e0, sh #808080
-Colorset 1 fg #000000, bg #709cf8, hi #b8cefc, sh #516691
-Colorset 2 fg #404040, bg black
-Colorset 3 fg #000000, bg wheat
+Colorset 0 fg #001122, bg #003399, hi #0044aa, sh #002288
+Colorset 1 fg #ffffff, bg #008822, hi #00aa44, sh #006611
+Colorset 2 fg #202020, bg black
+Colorset 3 fg #000000, bg #ffffff
 
-DefaultFont "xft:Gill Sans MT Light:Light:Roman:size=11:encoding=iso10646-1"
+DefaultFont "xft:Helvetica:Gill Sans MT Light:Light:Roman:size=11:encoding=iso10646-1"
 
 #---------- Virtual screen ----------
 
@@ -30,7 +28,7 @@ Style * EdgeMoveResistance	50
 *FvwmPager: Font		none
 
 *FvwmPager: WindowColorsets	0 1
-*FvwmPager: Hilight #384E7C
+*FvwmPager: Hilight #440088
 *FvwmPager: Window3DBorders
 *FvwmPager: MiniIcons
 *FvwmPager: SloppyFocus
@@ -39,7 +37,7 @@ Style * EdgeMoveResistance	50
 *FvwmPager: Balloons
 *FvwmPager: BalloonColorset *	0
 *FvwmPager: BalloonColorset *	3
-*FvwmPager: BalloonFont "xft:Gill Sans MT Light:Light:Roman:size=11:encoding=iso10646-1"
+*FvwmPager: BalloonFont "xft:Helvetica:Gill Sans MT Light:Light:Roman:size=8:encoding=iso10646-1"
 
 #---------- Windows ----------
 
@@ -59,7 +57,7 @@ ButtonStyle 1	MiniIcon
 ButtonStyle 2	4 50x30@0 75x70@0 25x70@0 50x30@1 #up triangle
 ButtonStyle 4	4 50x70@0 25x30@1 75x30@1 50x70@0 #down triangle
 
-Style *		Font "xft:Gill Sans MT:Bold:Roman:size=11:encoding=iso10646-1"
+Style *		Font "xft:Helvetica:Bold:Roman:size=9:encoding=iso10646-1:antialias=false"
 
 Style *		Colorset 0
 Style *		HilightColorset 1
@@ -164,4 +162,4 @@ Key Pause	A	A	Exec xlock -nice 0 -mode random -erasedelay 0
 
 Style * MiniIcon mini-defaulttool.xpm, Icon defaulttool.xpm
 Read icon-bindings
-## Style * NoIcon
+Style * IconBox -80x240-1-1, IconFill b l

@@ -2,7 +2,7 @@
 
 DestroyFunc StartFunction
 AddToFunc StartFunction
-+ I Test (Init) Exec xsetroot -solid '#356390'
++ I Test (Init) Exec xsetroot -solid '#141660'
 + I Test (Init) Exec xset b 0
 + I Test (Init) Exec xrdb -merge $[FVWM_USERDIR]/Xresources
 + I Test (Init) Exec xmodmap $[FVWM_USERDIR]/Xmodmap
@@ -10,7 +10,8 @@ AddToFunc StartFunction
 + I Test (Init) Exec xload -nolabel -jumpscroll 1 -hl grey -geometry 48x24-49+0 -rv
 + I Test (Init) Exec xscreensaver -no-splash
 + I Test (Init) Exec ssh-add $(for i in ~/.ssh/id*pub ; do echo ${i%.pub} ; done)
-+ I Test (Init) Exec stalonetray -bg "#356390" --geometry 1x1-102+0 --window-st$
++ I Test (Init) Exec stalonetray -bg "#356390" --geometry 1x1-102+0 --window-strut none & nm-applet
++ I Test (Init) Exec kmix
 + I Module FvwmPager 0 1
 
 DestroyFunc ExitFunction
