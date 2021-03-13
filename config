@@ -2,15 +2,17 @@
 
 ImagePath $[FVWM_USERDIR]/icons/
 setenv I 16x16/
-setenv F "xft:Helvetica:Gill Sans MT Light:Light:Roman:size=11:encoding=iso10646-1"
+setenv F "xft:Gill Sans MT Light:Light:Roman:size=13:encoding=iso10646-1"
+#setenv I \"32x32/\"
+#setenv F "xft:Gill Sans MT:Normal:Roman:size=19:encoding=iso10646-1"
 
 CleanupColorsets
-Colorset 0 fg #001122, bg #003399, hi #0044aa, sh #002288
-Colorset 1 fg #ffffff, bg #008822, hi #00aa44, sh #006611
-Colorset 2 fg #202020, bg black
-Colorset 3 fg #000000, bg #ffffff
+Colorset 0 fg #000000, bg #c0c0c0, hi #e0e0e0, sh #808080
+Colorset 1 fg #000000, bg #709cf8, hi #b8cefc, sh #516691
+Colorset 2 fg #404040, bg black
+Colorset 3 fg #000000, bg wheat
 
-DefaultFont "xft:Helvetica:Gill Sans MT Light:Light:Roman:size=11:encoding=iso10646-1"
+DefaultFont "xft:Gill Sans MT Light:Light:Roman:size=11:encoding=iso10646-1"
 
 #---------- Virtual screen ----------
 
@@ -20,15 +22,15 @@ EdgeResistance			150
 Style * EdgeMoveDelay		150
 Style * EdgeMoveResistance	50
 
-*FvwmPager: Rows		2
-*FvwmPager: Columns		1
-*FvwmPager: DeskTopScale	32
-*FvwmPager: Geometry		-0+25
-*FvwmPager: Colorset *		2
-*FvwmPager: Font		none
+*FvwmPager: Rows	 2  
+*FvwmPager: Columns	 1
+*FvwmPager: DeskTopScale 32
+*FvwmPager: Geometry	 -0+25
+*FvwmPager: Colorset *	 2
+*FvwmPager: Font	 none
 
 *FvwmPager: WindowColorsets	0 1
-*FvwmPager: Hilight #440088
+*FvwmPager: Hilight #384E7C
 *FvwmPager: Window3DBorders
 *FvwmPager: MiniIcons
 *FvwmPager: SloppyFocus
@@ -37,7 +39,7 @@ Style * EdgeMoveResistance	50
 *FvwmPager: Balloons
 *FvwmPager: BalloonColorset *	0
 *FvwmPager: BalloonColorset *	3
-*FvwmPager: BalloonFont "xft:Helvetica:Gill Sans MT Light:Light:Roman:size=8:encoding=iso10646-1"
+*FvwmPager: BalloonFont "xft:Gill Sans MT Light:Light:Roman:size=11:encoding=iso10646-1"
 
 #---------- Windows ----------
 
@@ -57,7 +59,7 @@ ButtonStyle 1	MiniIcon
 ButtonStyle 2	4 50x30@0 75x70@0 25x70@0 50x30@1 #up triangle
 ButtonStyle 4	4 50x70@0 25x30@1 75x30@1 50x70@0 #down triangle
 
-Style *		Font "xft:Helvetica:Bold:Roman:size=9:encoding=iso10646-1:antialias=false"
+Style *		Font "xft:Gill Sans MT:Bold:Roman:size=11:encoding=iso10646-1"
 
 Style *		Colorset 0
 Style *		HilightColorset 1
@@ -75,7 +77,7 @@ Style "oclock"		NoTitle,NoHandles,Sticky,WindowListSkip,BorderWidth 0,NeverFocus
 Style "xclock"		NoTitle,NoHandles,Sticky,WindowListSkip,BorderWidth 0,NeverFocus
 Style "FvwmPager"	NoTitle,NoHandles,Sticky,WindowListSkip,BorderWidth 0
 Style "FvwmButtons"	NoTitle,NoHandles,Sticky,WindowListSkip,BorderWidth 0
-Style "OpenSSH"		NoTitle,NoHandles,Sticky,WindowlistSkip,BorderWidth 10,StaysOnTop,UsePPosition
+Style "OpenSSH"         NoTitle,NoHandles,Sticky,WindowlistSkip,BorderWidth 10,StaysOnTop,UsePPosition
 Style "xpostit+"	NoTitle,Sticky,NoHandles,WindowListSkip,BorderWidth 0
 Style "XPostitPlus"	NoButton 2,NoButton 4
 Style "Knotes"		NoTitle,NoHandles,Sticky,WindowListSkip,BorderWidth 0,NeverFocus
@@ -97,16 +99,16 @@ Read functions
 #		Window Icon
 # Modifiers:	None Shift Control Meta Any
 
-# Button	Context Modif	Clickfunction	Doubleclickfunction
+# Button	Context Modif 	Clickfunction	Doubleclickfunction
 
-Mouse 1		R	A	Menu Main
-Mouse 2		R	A	Menu Window
-Mouse 3		R	A	Winlist
-Mouse 1		1	A	Menu Window 	Close
-Mouse 1		2	A	Maximize 0 100
-Mouse 2		2	A	Maximize 100 100
-Mouse 3		2	A	Maximize 100 0
-Mouse 0		4	A	Iconify
+Mouse 1		R   	A	Menu Main
+Mouse 2		R    	A	Menu Window
+Mouse 3         R       A	Winlist
+Mouse 0		1    	A	Menu Window 	Close
+Mouse 1		2    	A	Maximize 0 100
+Mouse 2		2    	A	Maximize 100 100
+Mouse 3		2    	A	Maximize 100 0
+Mouse 0		4    	A	Iconify
 Mouse 1		T	A	Raise-and-move
 Mouse 1		T	C	Maximize 38 83
 Mouse 2		T	A	Move
@@ -139,7 +141,7 @@ Key Down	A	CMS	CursorMove   0   10
 
 Key Tab		A	M	Winlist
 Key Tab		A	MS	Winlist
-Key Escape	A	C	Winlist
+Key Escape      A	C	Winlist
 
 Key F1		A	M	Popup Main
 Key F2		A	M	Popup Window
@@ -162,4 +164,4 @@ Key Pause	A	A	Exec xlock -nice 0 -mode random -erasedelay 0
 
 Style * MiniIcon mini-defaulttool.xpm, Icon defaulttool.xpm
 Read icon-bindings
-Style * IconBox -80x240-1-1, IconFill b l
+Style * NoIcon

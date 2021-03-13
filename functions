@@ -2,7 +2,12 @@
 
 DestroyFunc StartFunction
 AddToFunc StartFunction
-+ I Test (Init) Exec xsetroot -solid '#141660'
++ I Test (Init) Exec xinput set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 0
++ I Test (Init) Exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 0
++ I Test (Init) Exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 0
++ I Test (Init) Exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Middle Button Emulation" 0
++ I Test (Init) Exec xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Middle Button Timeout" 0
++ I Test (Init) Exec xsetroot -solid '#356390'
 + I Test (Init) Exec xset b 0
 + I Test (Init) Exec xrdb -merge $[FVWM_USERDIR]/Xresources
 + I Test (Init) Exec xmodmap $[FVWM_USERDIR]/Xmodmap
@@ -11,7 +16,6 @@ AddToFunc StartFunction
 + I Test (Init) Exec xscreensaver -no-splash
 + I Test (Init) Exec ssh-add $(for i in ~/.ssh/id*pub ; do echo ${i%.pub} ; done)
 + I Test (Init) Exec stalonetray -bg "#356390" --geometry 1x1-102+0 --window-strut none & nm-applet
-+ I Test (Init) Exec kmix
 + I Module FvwmPager 0 1
 
 DestroyFunc ExitFunction
@@ -32,3 +36,13 @@ AddToFunc Raise-and-resize
 DestroyFunc Winlist
 AddToFunc Winlist
 + I WindowList Alphabetic, NoGeometryWithInfo, NoDeskNum, NoHotkeys, NoCurrentDeskTitle
+
+DestroyFunc Menu16
+AddToFunc Menu16
++ I PipeRead 'rm $[FVWM_USERDIR]/menusize 1>&2'
++ I Read menus
+
+DestroyFunc Menu32
+AddToFunc Menu32
++ I PipeRead 'ln -s $[FVWM_USERDIR]/system/menusize $[FVWM_USERDIR]/menusize 1>&2'
++ I Read menus

@@ -144,6 +144,19 @@ Style kpresenter	MiniIcon 16x16/kpresenter.xpm,	Icon 32x32/kpresenter.xpm
 Style kontour		MiniIcon 16x16/kontour.xpm,	Icon 32x32/kontour.xpm
 Style Word		MiniIcon 16x16/winword.xpm,	Icon 32x32/winword.xpm
 
+#	Uninett
+Style Aruser		MiniIcon 16x16/remedy.xpm,	Icon 32x32/remedy.xpm
+Style ARSystem		MiniIcon 16x16/remedy.xpm,	Icon 32x32/remedy.xpm
+Style HyperHelp		MiniIcon 16x16/remedy.xpm,	Icon 32x32/remedy.xpm
+Style TimeTracker	MiniIcon 16x16/clock.xpm,	Icon 32x32/clock.xpm
+Style Titrax		MiniIcon 16x16/clock.xpm,	Icon 32x32/clock.xpm
+Style TIMEMACHINE.TimeMachine MiniIcon 16x16/karm.xpm,	Icon 32x32/karm.xpm
+Style TIMEMACHINE-TimeMachine MiniIcon 16x16/karm.xpm,	Icon 32x32/karm.xpm
+Style Xtab		MiniIcon 16x16/run.xpm,		Icon 32x32/run.xpm
+Style Agresso		MiniIcon 16x16/agresso.xpm,	Icon 32x32/agresso.xpm
+Style Ritz		MiniIcon 16x16/ritz.xpm,	Icon 32x32/ritz.xpm
+Style Gq		MiniIcon 16x16/ldap.xpm,	Icon 32x32/ldap.xpm
+
 #	Tools
 Style Emacs		MiniIcon 16x16/gnu.xpm,		Icon 32x32/gnu.xpm
 Style XCalc		MiniIcon 16x16/calc.xpm,	Icon 32x32/calc.xpm

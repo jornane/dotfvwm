@@ -16,13 +16,16 @@ AddToMenu Internet
 + Firefox%$[I]firefox.xpm%		Exec exec firefox
 + "Other browsers"%$[I]globe.xpm%	Popup Browsers
 + ""					Nop
-+ "Email%$[I]thunderbird.xpm%"	Exec exec thunderbird
++ "Email (work)%$[I]alpine.png%"	Exec exec xterm -geometry 80x56 -name Alpine -T "tor.gjerde@uninett.no [alpine]" -e alpine -p "{mail.ntnu.no:993/ssl/user=torgj}remote_pinerc"
++ "Email (private)%$[I]alpine.png%"	Exec exec xterm -geometry 80x56 -name Alpine -T "i@old.no [alpine]" -e ssh -tA login.uninett.no ssh -t epost.ufisa.uninett.no alpine
 +  ""					Nop
 + Pidgin%$[I]pidgin.png%		Exec exec pidgin
 
 DestroyMenu Tools
 AddToMenu Tools
++ Nautilus%$[I]nautilus.xpm%		Exec exec nautilus --no-desktop --browser --sm-disable
 + Calculator%$[I]calc.xpm%		Exec exec gnome-calculator
++ Calendar				Exec exec ssh -tAX login.uninett.no ssh -tAX vinland.uninett.no xfreerdp "'/t:Outlook\ Calendar'" /network:modem /size:1914x1055 /u:torgj@win.ntnu.no /v:officefarm.ntnu.no "'/shell:outlook\ /sniff\ /select\ outlook:calendar'" /p:`ssh old.no cat .ssh/wtf | openssl AES-256-CBC -pass pass:oQu8ho@ik -a -d`
 
 DestroyMenu Multimedia
 AddToMenu Multimedia
@@ -46,10 +49,22 @@ AddToMenu Session
 
 DestroyMenu Setup
 AddToMenu Setup
++ Keyboard%$[I]keyb.xpm%		Popup Keyboard
++ Menus%$[I]menu.xpm%			Popup Menus
 + Screensaver%$[I]yinyang.xpm%		Exec exec xscreensaver-demo
 + ""					  Nop
 + Console%$[I]xterm.xpm%		FvwmConsole
 + Restart%$[I]turn.xpm%			Restart
+
+DestroyMenu Keyboard
+AddToMenu Keyboard
++ "American%$[I]keyb-us.xpm%"		Exec exec xmodmap $[FVWM_USERDIR]/Xmodmap
++ "Norwegian%$[I]keyb-no.xpm%"		Exec exec xmodmap $[FVWM_USERDIR]/Xmodmap.no
+
+DestroyMenu Menus
+AddToMenu Menus
++ "Small font and icons"%$[I]menu-small.xpm%	Menu16
++ "Large font and icons"%$[I]menu-large.xpm%	Menu32
 
 DestroyMenu Exit
 AddToMenu Exit
