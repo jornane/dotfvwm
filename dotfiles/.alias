@@ -1,0 +1,36 @@
+alias sv "ssh -tAX login.uninett.no ssh -tAX vinland.uninett.no"
+alias so "ssh -tAX login.uninett.no ssh -tAX old.no"
+alias se "ssh -tAX email.old.no"
+alias sa "source ~/.alias"
+alias sc "source ~/.complete"
+
+alias nidarvoll "lpr -P nidarvoll -H cups.uninett.no:631"
+alias nidarvoll-A3 "lpr -P nidarvoll -H cups.uninett.no:631 -o PageSize=A3"
+
+alias ll "ls -l"
+alias lm "ls -Al \!:1* | less"
+alias m less
+alias dus "du -b | sort +1"
+alias mc 'echo "try:\nmv$*"'
+
+if (`uname` == "Linux") then
+ alias ls "ls -N"
+endif
+
+if ("$TERM" == "xterm") then
+ #alias xtitle 'echo "]0;\!*\c"'
+ alias xtitle 'echo -n "]0;\!*"'
+ setenv MASKIN `uname -n|cut -f 1 -d .`
+ alias cwdcmd 'xtitle "$USER@$MASKIN":`dirs`'
+ #alias pin 'xtitle $USER@$MASKIN [pine];pine;rm ~/.pine-debug* >&/dev/null;cwdcmd'
+ #alias pin 'xterm -geometry 80x56 -name Pine -T "$USER@uninett.no [pine]" -e ssh tyholt &'
+ #alias pin 'xterm -geometry 80x56 -name Pine -T "$USER@uninett.no [pine]" -e tcsh -c pine;rm ~/.pine-debug* 2>&/dev/null &'
+ alias pin 'setenv LANG en_US && xterm -geometry 80x56 -name Pine -T "$USER@old.no [pine]" -e ssh -t old.no pine &'
+ alias pic 'xtitle $USER@$MASKIN [pico \!*];pico -e -j -w -z \!*;cwdcmd'
+ alias xname 'xprop | grep "WM_CLASS(STRING)" | cut -f 2 -d ='
+ alias visual 'xdpyinfo | grep class | sed -e "s/[ ]*class:[ ]*//"'
+ alias titan java -jar $HOME/bin/colossus/Colossus.jar
+else
+ alias pin 'pine;rm ~/.pine-debug* >&/dev/null'
+ alias pic 'pico -d -e -j -w -z'
+endif

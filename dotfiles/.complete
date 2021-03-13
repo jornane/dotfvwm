@@ -1,0 +1,311 @@
+set M = `uname`
+if ($M == Linux || $M == FreeBSD || $M == NetBSD || $M == ULTRIX || \
+$M == NeXTStep || $M == AIX) then
+  complete kill 'c/-/S/' 'c/%/j/' 'p/*/`ps hux | awk \{print\ \$2\}`/'
+  complete ps 'c/--/(sort help version)/' \
+   'c/{l,u,j,s,v,m,f,a,x,S,c,e,w,h,r,n,t,O}/(l u j s v m f a x S c e w h r n \
+   t O)/' 'p/1/(l u j s v m f a x S c e w h r n t O)/'
+else if ($M == HP-UX || $M == SunOS || $M == IRIX || $M == OSF1) then
+  complete kill 'c/-/S/' 'c/%/j/' 'p/*/`ps -ef|grep $USER|awk \{print\ \$2\}`/'
+  complete ps 'c/-/(A a C d e g G n p R s t u U f l fl c j P o H)/' \
+   'n/-u/`id|cut -f1 -d\(|cut -f2 -d=`/'
+else
+  complete kill 'c/-/S/' 'c/%/j/' 'p/*/`ps|grep -v PID|awk \{print\ \$1\}`/'
+endif
+unset M
+
+if ($TERM == xterm && `where xdpyinfo` != '') then
+ set colors = `cat /etc/X11/rgb.txt | cut -f3 | grep -v " " | grep -v -i grey`
+ set visual = `xdpyinfo | grep class: | sed -e 's/[ ]*class:[ ]*//'`
+ set depth = `xdpyinfo | grep 'depths (1):'|sed -e 's/[ ]*depths (1): //'`
+endif
+
+#set printers = `lpstat -p | awk '{print $2}'`
+
+complete lpr 'c/-P/$printers/'
+complete lpq 'c/-P/$printers/'
+complete lprm 'c/-P/$printers/' \
+ 'n/-P*/`lpq -a | grep "^[^ ].*$USER@.*:..:"| awk \{print\ \$4\}`/'
+
+set hosts = `cat ~/.ssh/known_hosts | \
+grep -v '|' | grep '\.' | cut -f1 -d' ' | tr ',' '\n' | \
+grep -v '^[0-9a-f:]*$' | grep -v '^[0-9.]*$' | sort -u`
+
+complete queso 'p/*/$hosts/'
+complete host 'c/-/(l v w r d t a)/' 'n/-t/(a ns md mf cname soa mb mg mr null \
+ wks ptr hinfo minfo mx uinfo uid gid unspec any)/' 'p/*/$hosts/'
+complete xhost 'c/+/$hosts/' 'c/-/$hosts/' 'p/*/$hosts/'
+complete ping 'c/-/(c d f i l n p q R r s v)/' 'p/1/$hosts/' \
+ 'n/{-d,-f,-n,-q,-R,-r,-v}/$hosts/'
+complete telnet 'c/-/(8 E L a d r S e l n)/' 'p/1/$hosts/' \
+ 'n/{-8,-E,-L,-a,-d,-r}/$hosts/' 'n/-l/u/' 'n/-n/f/' 'n/-t/(16 8)/'
+complete traceroute 'c/-/(f F d g i I m n p r s t v w x)/' 'p/1/$hosts/' \
+ 'n/{-d,-F,-I,-N,-r,-v,-x}/$hosts/' 'n/-t/(16 8)/'
+complete netstat 'c/--/(tcp udp raw unix inet ip ax25 ipx netrom ddp route \
+ interfaces masquerade statistics verbose numeric af continous version help)/' \
+ 'c/-/(A M V a c e h i n o r s t u v w)/' \
+ 'n/{-A,--af}/(inet unix ipx ax25 netrom ddp)/,'
+complete finger 'c/*@/$hosts/' 'p/1/u/@'
+complete ssh 'c/-/(C L P R V l a c e f g i n o p q t v x)/' \
+ 'n/-l/u/' 'n/-e/(none ~)/' 'n/-c/(none idea blowfish 3des)/' \
+ 'c/*@/$hosts/' 'p/*/$hosts/'
+complete scp 'c/-/(A B C L P Q S a c i o p q r v)/' \
+ 'n/-c/(none idea blowfish 3des)/' 'c/*@/$hosts/:/'
+
+complete cvs 'c/--/(help help-options help-commands help-synonyms version)/' \
+ 'c/-/(H Q q b r w l n t v T e d f z x a s)/' \
+ 'n/remove/(-f)/' 'n/update/(-Pd)/' \
+ "n|-d|($user@webcvs:/webcvs)|" 'N/-d/(checkout import)/' \
+ 'n|checkout|`ssh webcvs ls /webcvs`|' \
+ 'p/1/(-d add commit diff import log remove status update version)/' \
+ 'p/1/(add admin annotate checkout commit diff edit editors export history \
+ import init kserver log login logout pserver rannotate rdiff release remove \
+ rlog rtag server status tag unedit update version watch watchers)/'
+
+complete alias 'p/1/a/'
+complete unalias 'p/1/a/'
+complete set 'p/1/s/'
+complete unset 'p/1/s/'
+complete setenv 'p/1/e/' 'c/*:/(0.0)/' 'n/DISPLAY/$hosts/:'
+complete unsetenv 'p/1/e/'
+complete complete 'p/1/c/' 'p:2:(c C n N p):/'
+complete which 'p/*/c/'
+complete where 'p/*/c/'
+complete cd 'p/1/d/'
+
+complete cat 'c/--/(show-all number-nonblank show-ends number squeeze-blank \
+ show-tabs show-nonprinting help version)/' 'c/-/(A b e E n s t T u v)/'
+complete cut 'c/--/(bytes characters delimiter fields only-delimited help \
+ version)/' 'c/-/(b c d f s)/'
+complete split 'c/--/(lines bytes line-bytes verbose help version)/' \
+ 'c/-/(l b C)/'
+complete head 'c/--/(bytes lines quiet silent verbose help version)/' \
+ 'c/-/(c n q v)/'
+complete tail 'c/--/(bytes follow lines quiet silent verbose help version)/' \
+ 'c/-/(c f n q v)/'
+complete diff 'c/--/(ignore-case ignore-all-space ignore-space-change \
+ ignore-blank-lines ignore-matching-lines text context unified label \
+ show-c-function show-function-line brief ed rcs side-by-side width \
+ left-column suppress-common-lines ifdef GTYPE-group-format line-format \
+ LTYPE-line-format paginate expand-tabs initial-tab recursive new-file \
+ unidirectional-new-file report-identical-files exclude exclude-from \
+ starting-file horizon-lines minimal speed-large-files version help)/' \
+ 'c/-/(i w b B I a c u L p F q e n y w l t T r N P s x X S d H v)/'
+complete sort 'c/--/(help version)/' 'c/-/(b c d f g i k m M n o r s t T u z)/'
+complete grep 'c/--/(extended-regexp fixed-strings basic-regexp regexp file \
+ ignore-case word-regexp line-regexp no-messages revert-match version help \
+ byte-offset line-number with-filename no-filename quiet silent context \
+ files-without-match files-with-matches count before-context after-context)/' \
+ 'c/-/(E F G e f i w x s v V b n H h q L l c B A C)/'
+complete strings 'c/--/(all print-file-name bytes radix target help version)/' \
+ 'c/-/(a f o v n t)/' 'n/--target/(elf32-i386 a.out-i386-linux srec symbolsrec \
+ tekhex binary ihex trad-core)/' 'n/{-t,--radix}/(o x d)/'
+complete tee 'c/--/(append help ignore-interrupts version)/' 'c/-/(a i)/'
+complete wc 'c/--/(bytes chars words lines help version)/' 'c/-/(c w l)/'
+
+complete cp 'c/--/(backup no-dereference force interactive one-file-system \
+ preserve recursive update verbose suffix version-control archive parents \
+ link symbolic-link help version)/' 'c/-/(a b d f i l p r s u v x P R S V)/' \
+ 'n/{-V,--version-control}/(numbered existing simple)/'
+complete mv 'c/--/(backup force interactive suffix update verbose \
+ version-control help version)/' 'c/-/(b f i S u v V)/' \
+ 'n/{-V,--version-control}/(numbered existing simple)/'
+complete ln 'c/--/(backup directory force no-dereference interactive symbolic \
+ suffix verbose version-control help version)/' 'c/-/(b d F f n i s S v V)/' \
+ 'n/{-V,--version-control}/(numbered existing simple)/'
+complete rm 'c/--/(directory force interactive recursive help version \
+ verbose)/' 'c/-/(d f i r v R)/'
+complete rmdir 'c/--/(parents help version)/' 'c/-/p/' 'p/*/d/'
+complete mkdir 'c/--/(mode parents help version)/' 'c/-/(m p)/' \
+ 'n/-m/(u g o a)/' 'c/*{+,-,=}/(r w x X s t u g o)/' 'c/{u,g,o,a}/(+ - =)/' \
+ 'p/*/d/'
+
+complete find 'c/--/(help version)/' 'c/-/(daystart depth follow help maxdepth \
+ mindepth mount noleaf version xdev amin anewer atime cmin cnewer ctime empty \
+ false fstype gid group ilname iname inum ipath iregex links lname mmin mtime \
+ name newer nouser nogroup path perm regex size true type uid used user xtype \
+ exec fls fprint fprint0 fprintf ok print print0 printf prune ls not and or)/' \
+ 'n/-fstype/(nfs ufs 4.2 4.3 tmp mfs S51K S52K ext2 ext3 msdos iso9660 pcfs \
+ hsfs vxfs hfs xfs efs cd9660 ffs advfs fdfs)/' 'n/-user/u/' 'n/-group/g/' \
+ 'n/-{,x}type/(b c d f l p s)/' 'n/-{exec,ok}/c/' \
+ 'n/-{{,a,c}newer,name,{,n}cpio,fls,fprint{,0,f}}/f/' \
+ 'p/*/d/'
+complete locate 'c/--/(database version help)/' 'c/-/(d)/'
+complete xargs 'c/--/(null eof replace max-lines interactive max-chars \
+ verbose exit max-procs max-args no-run-if-empty version help)/' \
+ 'c/-/(0 p r t x e i l n s P)/'
+
+complete tree 'c/-/(a d f g i l n p q s t u x A C D F I N P)/'
+complete df 'c/--/(all human-readable inodes kilobytes megabytes no-sync \
+ portability sync type print-type exclude-type help version)/' \
+ 'c/-/(a h i k m P t T x v)/'
+complete du 'c/--/(all bytes total dereference-args human-readable kilobytes \
+ count-links dereference megabytes separate-dirs summarize one-file-system \
+ help version)/' 'c/-/(a b c D h k l L m S s x)/'
+complete quota 'c/-/(g u v q)/' 'n/-u{,v}/u/' 'n/-g{,v}/g/' 'p/1/u/'
+complete uname 'c/--/(all machine nodename release sysname processor help \
+ version)/' 'c/-/(a m n r s p v)/'
+
+complete chsh 'c/--/(list-shells help version)/' 'c/-/(s)/' \
+ 'n/-s/`chsh --list-shells`/' 'p/*/u/'
+complete chown 'c/--/(changes no-dereference silent quiet recursive verbose \
+ help version)/' 'c/-/(c h f R v)/' 'c/*{.,:}/g/' 'p/1/u/'
+#complete chown 'c/--/(changes no-dereference silent quiet recursive verbose \
+# help version)/' 'c/-/(c h f R v)/' 'c;*{.,:};`cat /etc/group|cut -f1 -d:`;' \
+# 'p/1/u/'
+complete chgrp 'c/--/(changes no-dereference silent quiet recursive verbose \
+ help version)/' 'c/-/(c h f R v)/' 'p/1/g/'
+#complete chgrp 'c/--/(changes no-dereference silent quiet recursive verbose \
+# help version)/' 'c/-/(c h f R v)/' 'p;1;`cat /etc/group|cut -f1 -d:`;'
+complete chmod 'c/--/(recursive changes silent quiet verbose help version)/' \
+ 'c/-/(c f R v)/' 'c/{u,g,o,a,}{u,g,o,a,}{+,-,=}/(r w x X s t u g o)/' \
+ 'c/{u,g,o,a}/(+ - =)/' 'p/1/(u g o a + - =)/'
+
+complete man 'c/-/(a c d D f h k t w W M P S m p)/' 'n/-p/(e p t g r v)/' \
+ 'p/*/c/'
+complete tar 'c/--/(catenate concatenate create diff compare delete append \
+ list update extract get atime-preserve block-size read-full-blocks directory \
+ checkpoint file force-local info-script new-volume-script incremental \
+ listed-incremental dereference ignore-zeros ignore-failed-read keep-old-files \
+ starting-file one-file-system tape-length modification-time multi-volume \
+ after-date newer old-archive portability to-stdout same-permissions \
+ preserve-permissions absolute-paths preserve record-number remove-files \
+ same-order preserve-order same-owner sparse files-from null totals verbose \
+ label version interactive confirmation verify exclude exclude-from compress \
+ uncompress gzip ungzip use-compress-program block-compress)/' 'c/-/(A c d r \
+ t u x b B C f F G g h i k K l L m M N o O p P R s S T v V w W X Z z)/' \
+ 'n/{-C,--directory}/d/'
+
+complete su 'c/--/(login commmand fast preserve-environment shell help \
+ version)/' 'c/-/(l c f m s)/' 'n/{-s,--shell}/`chsh --list-shells`/' 'p/*/u/'
+complete make 'c/-/(b m C d e f i I j k l n o p q r s S t v w W)/' \
+ 'n/{-C,-I}/d/' 'n/{-f,-o,-W}/f/' \
+ 'p/*/`grep \'^[^.#$].*:\' Makefile|cut -f1 -d:`/'
+
+complete tidy 'c/-/(indent i omit o wrap upper u clean c raw ascii latin1 \
+ iso2022 utf8 modify m errors e f xml asxml slides help h)/'
+complete lynx 'c/-/(anonymous assume_charset assume_local_charset \
+ assume_unrec_charset auth base blink book buried_news cache case cfg child \
+ color cookies core crawl display dump editor emacskeys enable_scrollback \
+ error_file fileversions force_html force_secure from ftp get_data head help \
+ hiddenlinks historical homepage image_links index ismap link localhost locexec\
+ mime_header minimal newschunksize newsmaxchunk nobrowse nocc nocolor noexec \
+ nofilereferer nolist nolog nopause noprint noredir noreferer noreferer \
+ nosocks nostatus number_links pauth popup post_data preparsed print \
+ pseudo_inlines raw realm reload restrictions resubmit_posts rlogin selective \
+ show_cursor source startfile_ok telnet term tlog trace traversal underscore \
+ useragent validate version vikeys width)/' 'n/-editor/c/' \
+ 'c/*:/(0.0)/' 'n/-display/$hosts/:' \
+ 'c|{http,ftp,gopher}://|$hosts|/' 'p|*|(http:/ ftp:/ gopher:/)|/'
+complete pico 'c/-/(d e f j g k m n o r t v w x z)/'
+
+complete xrdb 'c/-/(help display all global screen screens n quiet cpp nocpp \
+ symbols query load override merge remove retain edit backup D U I)/' \
+ 'c/*:/(0.0)/' 'n/-display/$hosts/:'
+complete xset 'c/-/(display b bc c dpms fp led r)/' 'c/+/(dpms fp)/' \
+ 'p/1/(b bc c dpms fp led m mouse p r s q)/' 'n/r/(on off rate)/' \
+ 'n/{b,c,led}/(on off)/' 'n/dpms/(force)/' 'n/force/(standby suspend off)/' \
+ 'n/fp/(default rehash)/' 'n/{+,-}fp/d/' 'n/m{ouse,}/(default)/' \
+ 'n/s/(blank noblank expose noexpose on off default activate reset)/' \
+ 'c/*:/(0.0)/' 'n/-display/$hosts/:'
+complete xsetroot 'c/-/(help def display cursor cursor_name bitmap mod gray \
+ grey fg bg rv solid name)/' 'c/*:/(0.0)/' 'n/-display/$hosts/:' \
+ 'n/{-fg,-bg,-solid}/$colors/' \
+
+complete xfig 'c/-/(landscape portrait inches imperial metric centimeters \
+ userscale useunits latexfonts specialtext startfontsize startpsFont \
+ startlatexFont starttextstep startfillstyle startgridmode startposnmode \
+ startlinewidth zoom \
+ exportLanguage center flushleft magnification multiple single paper_size \
+ jpeg_quality transparent_color \
+ boldFont buttonFont normalFont scalablefonts noscalablefonts cbg cfg \
+ monochrome max_image_colors dontswitchcmap visual depth \
+ geometry iconGeometry pheight pwidth but_per_row left right showallbuttons \
+ internalBW \
+ help debug image_editor library_dir showballoons dontshowballoon \
+ balloon_delay showlengths dontshowlengths spellcheck tablet keyFile track \
+ notrack international \
+ inverse rulerthick)/' \
+ 'n/-startp{,sFont}/(Times-Roman Times-Italic Times-Bold Times-BoldItalic \
+ AvantGarde-Book AvantGarde-BookOblique AvantGarde-Demi AvantGarde-DemiOblique \
+ Bookman-Light Bookman-LightItalic Bookman-Demi Bookman-DemiItalic \
+ Courier Courier-Oblique Courier-Bold Courier-BoldOblique \
+ Helvetica Helvetica-Oblique Helvetica-Bold Helvetica-BoldOblique \
+ Helvetica-Narrow Helvetica-Narrow-Oblique \
+ Helvetica-Narrow-Bold Helvetica-Narrow-BoldOblique \
+ NewCenturySchlbk-Roman NewCenturySchlbk-Italic \
+ NewCenturySchlbk-Bold NewCenturySchlbk -BoldItalic \
+ Palatino-Roman Palatino-Italic Palatino-Bold Palatino-BoldItalic \
+ Symbol ZapfChancery-MediumItalic)/' \
+ 'n/-startla{,texFont}/(SansSerif)/' \
+ 'n/-{bol{,d,dFont},butt{,on},nor{,mal{,Font}}}/(#font#)/' \
+ 'n/-{internalBW,max{,_image_colors},rulerthick,j{,peg_quality}},\
+bal{,loon_delay}}/(#int#)/' \
+ 'n/-{mag{,nification},ph{eight},pw{idth},startfo{,ntsize},startt{,extstep},\
+users{,cale},zoom}/(#float#)/' \
+ 'n/-c{b,f}g/$colors/' \
+ 'n/-e{,xportLanguage}/(box latex epic eepic eepicemu pictex ibmgl eps ps \
+ pstex textyl tpic pic mf acad pcx png gif jpeg tiff ppm xbm xpm)/' \
+ 'n/-geom{,etry}/(#[WxH]+X+Y#)/' \
+ 'n/-iconG{,eometry}/(#+X+Y#)/' \
+ 'n/-k{,eyFile}/f/' \
+ 'n/-li{,brary_dir}/d/' \
+ 'n/-pa{,per_size}/(Letter Legal Ledger Tabloid A B C D E A4 A3 A2 A1 A0 B5)/' \
+ 'n/-{spel{,lcheck},image_editor}/c/' \
+ 'n/-tran{,sparent_color}/(-3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 \
+ 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 #32-543#)/' \
+ 'n/-startfi{,llstyle}/(-1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 \
+ 20 21)/' \
+ 'n/-startg{,ridmode}/(0 1 2 3 4)/' \
+ 'n/-startpo{,snmode}/(0 1 2 3 4 5)/' \
+ 'n/-but_{,per_row}/(2 3 4 5 6)/' \
+ 'n/-visual/$visual/'
+
+complete autotrace 'c/-/(align-threshold color-count \
+ corner-always-threshold corner-surround corner-threshold error-threshold \
+ filter-alternative-surround filter-epsilon filter-iterations \
+ filter-percent filter-surround input-format help line-reversion-threshold \
+ line-threshold list-formats log output-file output-format \
+ remove-adjacent-corners reparameterize-improve reparameterize-threshold \
+ subdivide-search subdivide-surround subdivide-threshold tangent-surround \
+ version)/' \
+ 'n/-input-format/(pbm pnm pgm ppm bmp)/' \
+ 'n/-output-format/(eps ai sk p2e svg swf dxf dxf12 fig)/'
+
+complete xv 'c/-/(24 2xlimit 4x3 8 acrop aspect best24 bg black bw cecmap \
+ cegeometry cemap cgamma cgeometry clear close cmap cmtgeometry cmtmap crop \
+ cursor DEBUG dir display dither drift expand fg fixed flist gamma geometry \
+ grabdelay gsdev gsgeom gsres help hflip hi hist hsv icgeometry iconic \
+ igeometry imap lbrowse lo loadclear max maxpect mfn mono name ncols ninstall \
+ nodecor nofreecols nolimits nopos noqcheck noresetroot norm nostat owncmap \
+ perfect pkludge poll preset quick24 quit random raw rbg rfg rgb RM rmode root \
+ rotate rv rw slow24 smooth stdcmap tgeometry vflip viewonly visual vsdisable \
+ vsgeometry vsmap vsperfect wait white wloop)/' \
+ 'c/+/(24 2xlimit 4x3 8 acrop bw cecmap cemap clear close cmap cmtmap dither \
+ fixed hflip hist hsv iconic imap lbrowse loadclear max maxpect mono ninstall \
+ nodecor nofreecols nolimits nopos noqcheck noresetroot norm nostat owncmap \
+ perfect pkludge poll quit random raw rgb root rv rw smooth stdcmap vflip \
+ viewonly vsdisable vsmap vsperfect wloop)/' \
+ 'n/{-bg,-fg,-rbg,-rfg,-hi,-lo,-white,-black}/$colors/'
+
+complete xloadimage 'c/-/(global border configuration default debug delay \
+ display dump fit fork fullscreen geometry goto help identify install list \
+ onroot path pixmap private quiet supported type verbose version view visual \
+ windowid at background brighten center clip colors dither foreground gamma \
+ gray halftone idelay invert merge name newoptions normalize rotate shrink \
+ smooth tile title xzoom yzoom zoom)/' \
+ 'n/-help/(global border configuration default debug delay \
+ display dump fit fork fullscreen geometry goto help identify install list \
+ onroot path pixmap private quiet supported type verbose version view visual \
+ windowid at background brighten center clip colors dither foreground gamma \
+ gray halftone idelay invert merge name newoptions normalize rotate shrink \
+ smooth tile title xzoom yzoom zoom)/' \
+ 'n/-type/`xloadimage -supported|grep "   "|cut -f1 -d" "`/,' \
+ 'n/-dump/`xloadimage -supported|grep Yes|cut -f1 -d" "`/,' \
+ 'c/jpeg,/(arithmetic grayscale nointerleave optimize quality restart smooth)/'\
+ 'c/pbm,/(normal raw)/' 'c/tiff,/(compression)/=' 'c/tiff,compression=/(none \
+ rle g3fax g4fax lzw jpeg next rlew mac packbits thunderscan)/' \
+ 'n/-visual/$visual/' 'n/-rotate/(90 180 270)/'\
+ 'n/{-border,-background,-foreground}/$colors/'
+
+complete xmodmap 'c/-/(display help grammar verbose quiet n e pm pk pke pp)/'

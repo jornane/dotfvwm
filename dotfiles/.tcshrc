@@ -1,0 +1,2 @@
+bindkey ^w backward-delete-word
+source ~/.cshrc
